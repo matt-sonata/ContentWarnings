@@ -6,15 +6,15 @@ The extension will check if a flagged contenttype contains any content and will 
 
 To use this extension, you will need to add the following entries to your contenttypes.yml:
 
-warning: true
+    warning: true
 
-warningtext: # Title is empty
+    warningtext: # Title is empty
 
 Optionally, you may further check whether a field should be flagged. Using:
 
-warningoperator: # "<"
+    warningoperator: # "<"
 
-warningcondition: # 99
+    warningcondition: # 99
 
 you may select an operator and a condition. The available operators are: 
 
