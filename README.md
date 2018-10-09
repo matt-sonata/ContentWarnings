@@ -12,7 +12,7 @@ To use this extension, you will need to add the following entries to your conten
 
 Optionally, you may further check whether a field should be flagged. Using:
 
-    warningoperator: # "<"
+    warningoperator: # "<" (quotes are required)
 
     warningcondition: # 99
 
