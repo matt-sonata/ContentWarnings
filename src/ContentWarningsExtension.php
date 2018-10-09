@@ -18,7 +18,7 @@ class ContentWarningsExtension extends SimpleExtension
 
        return [
 
-           'templates' => ['namespace' => 'bolt'],
+           'templates' => ['position' => 'prepend', 'namespace' => 'bolt'],
 
        ];
 
