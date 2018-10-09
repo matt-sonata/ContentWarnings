@@ -18,7 +18,7 @@ Optionally, you may further check whether a field should be flagged. Using:
 
 you may select an operator and a condition. The available operators are: 
 
-    "empty"
+    "empty" # default
     "<"
     ">"
     "="
@@ -28,7 +28,7 @@ you may select an operator and a condition. The available operators are:
     "length<"
     "length>"
 
-This extension does not differentiate between strings and integers so please note that using "<" on a field that contains a string will always trigger an error.
+This extension does not differentiate between strings and integers so please note that using "<" on a field that contains a string will always trigger a warning.
 
 The last two operators compare the length of the field, useful for text based content.
 
