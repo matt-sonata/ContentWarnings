@@ -4,6 +4,8 @@ This is a simple extension which adds customisable warnings to the listing page 
 
 The extension will check if a flagged contenttype contains any content and will trigger a warning if not. It was made as an alternative to required fields, allowing records to be saved with content missing to be completed at a later date.
 
+Current Limitations: Template fields are not yet supported.
+
 To use this extension, you will need to add the following entries to your contenttypes.yml:
 
     warning: true
