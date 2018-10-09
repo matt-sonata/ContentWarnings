@@ -16,7 +16,6 @@ class ExtensionNameExtension extends SimpleExtension
 
    {
 
-
        return [
 
            'templates' => ['namespace' => 'bolt'],

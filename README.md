@@ -6,27 +6,29 @@ The extension will check if a flagged contenttype contains any content and will 
 
 To use this extension, you will need to add the following entries to your contenttypes.yml:
 
-warning: true
-warningtext: # Title is empty
+    warning: true
+
+    warningtext: # Title is empty
 
 Optionally, you may further check whether a field should be flagged. Using:
 
-warningoperator: # "<"
-warningcondition: # 99
+    warningoperator: # "<" (quotes are required)
+
+    warningcondition: # 99
 
 you may select an operator and a condition. The available operators are: 
 
-# "empty"
-# "<"
-# ">"
-# "="
-# "!="
-# "<="
-# ">="
-# "length<"
-# "length>"
+    "empty" # default
+    "<"
+    ">"
+    "="
+    "!="
+    "<="
+    ">="
+    "length<"
+    "length>"
 
-This extension does not differentiate between strings and integers so please note that using "<" on a field that contains a string will always trigger an error.
+This extension does not differentiate between strings and integers so please note that using "<" on a field that contains a string will always trigger a warning.
 
 The last two operators compare the length of the field, useful for text based content.
 
