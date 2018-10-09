@@ -1,6 +1,6 @@
 <?php
 
-namespace Bolt\Extension\MatthewBeck\ContentWarnings;
+namespace Bolt\Extension\MatthewBeck75\ContentWarnings;
 
 use Bolt\Extension\SimpleExtension;
 

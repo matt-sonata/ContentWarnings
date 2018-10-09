@@ -1,8 +1,8 @@
 {
-    "name": "MatthewBeck/ContentWarning",
+    "name": "matthewbeck75/contentwarnings",
     "description": "Warn on incomplete or missing content",
     "type": "bolt-extension",
-    "keywords": ["Content Warning"],
+    "keywords": ["Content Warnings"],
     "require": {
         "bolt/bolt": "^3.5"
     },
@@ -13,24 +13,26 @@
     "authors": [
         {
             "name": "Matthew Beck",
+            "homepage": "https://lightspeed-digital.com",
             "email": "mjb5@hotmail.co.uk"
         }
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "version": "0.0.1",
     "autoload": {
         "psr-4": {
-            "Bolt\\Extension\\MatthewBeck\\ContentWarning\\": "src"
+            "Bolt\\Extension\\MatthewBeck75\\ContentWarnings\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Bolt\\Extension\\MatthewBeck\\ContentWarning\\Tests\\": "tests",
+            "Bolt\\Extension\\MatthewBeck75\\ContentWarnings\\Tests\\": "tests",
             "Bolt\\Tests\\": "vendor/bolt/bolt/tests/phpunit/unit/"
         }
     },
     "extra": {
         "bolt-assets": "web",
-        "bolt-class": "Bolt\\Extension\\MatthewBeck\\ContentWarning\\ContentWarningExtension"
+        "bolt-class": "Bolt\\Extension\\MatthewBeck75\\ContentWarnings\\ContentWarningsExtension"
     }
 }
