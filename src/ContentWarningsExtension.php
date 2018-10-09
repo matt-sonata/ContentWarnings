@@ -7,7 +7,7 @@ use Bolt\Extension\SimpleExtension;
 /**
  * ExtensionName extension class.
  *
- * @author Your Name <you@example.com>
+ * @author Matthew Beck 
  */
 class ContentWarningsExtension extends SimpleExtension
 {
