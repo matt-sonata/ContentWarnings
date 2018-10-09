@@ -169,68 +169,89 @@ row_header:     prop.extended and (prop.first or (prop.has_groupname and prop.ne
                 {{ content|excerpt(excerptlength - title|length, false, filter|default()) }}
             </span>
 
-                        {% for key, field in content.contenttype.fields if field.warning %}
-                    {% set warn = 'false' %}
+            {% if content.templatefields.fields is not empty %} {#  Preparation for templatefield support #}
+                    {% set fields = content.contenttype.fields %}
 
-                    {% if content[key] is empty %}
+                    {% set combinedcontent = content.values %}
+                {% else %}
+                    {% set fields = content.contenttype.fields %} 
+                    {% set combinedcontent = content.values %}
+            {% endif %}
+
+                {% for key, field in fields if fields.warning %}
+
+                    {% set warn = 'false' %}
+                    {% if combinedcontent[key] is empty %}
                         {% set warn = 'true' %}
                     {% endif %}
 
                     {% if field.warningoperator is not empty and warn != 'true' %}
 
                         {% if field.warningoperator == '<' %}
-                            {% if content[key] < field.warningcondition %}
+                            {% if combinedcontent[key] < field.warningcondition %}
                                 {% set warn = 'true' %}
                             {% endif %}
                         {% endif %}
 
                         {% if field.warningoperator == '>' %}
-                            {% if content[key] > field.warningcondition %}
+                            {% if combinedcontent[key] > field.warningcondition %}
                                 {% set warn = 'true' %}
                             {% endif %}
                         {% endif %}
 
                         {% if field.warningoperator == '=' %}
-                            {% if content[key] == field.warningcondition %}
+                            {% if combinedcontent[key] == field.warningcondition %}
                                 {% set warn = 'true' %}
                             {% endif %}
                         {% endif %}
 
                         {% if field.warningoperator == '!=' %}
-                            {% if content[key] != field.warningcondition %}
+                            {% if combinedcontent[key] != field.warningcondition %}
                                 {% set warn = 'true' %}
                             {% endif %}
                         {% endif %}
 
                         {% if field.warningoperator == '<=' %}
-                            {% if content[key] <= field.warningcondition %}
+                            {% if combinedcontent[key] <= field.warningcondition %}
                                 {% set warn = 'true' %}
                             {% endif %}
                         {% endif %}
 
                         {% if field.warningoperator == '>=' %}
-                            {% if content[key] >= field.warningcondition %}
+                            {% if combinedcontent[key] >= field.warningcondition %}
                                 {% set warn = 'true' %}
                             {% endif %}
                         {% endif %}
 
                         {% if field.warningoperator == 'length<' %}
-                            {% if content[key]|length < field.warningcondition %}
+                            {% if combinedcontent[key]|length < field.warningcondition %}
                                 {% set warn = 'true' %}
                             {% endif %}
                         {% endif %}
 
                         {% if field.warningoperator == 'length>' %}
-                            {% if content[key]|length > field.warningcondition %}
+                            {% if combinedcontent[key]|length > field.warningcondition %}
                                 {% set warn = 'true' %}
                             {% endif %}
                         {% endif %}
 
                     {% endif %}
 
+                    {% if field.warningtext is empty %}
+                            {% if field.label is not empty %}
+                                {% set warningtext = field.label ~ ' is empty or incorrect'  %}
+                            {% else %}
+                                {% set warningtext = key ~ ' is empty or incorrect'  %}
+                            {% endif %}
+                                
+                    {% else %}
+                            {% set warningtext = field.warningtext  %}
+                    {% endif %} 
+
                     {% if warn == 'true' %}
-                        <p class="error"><i class="fa fa-exclamation-circle"></i> {{ field.warningtext }}</p>
+                        <p class="error"><i class="fa fa-exclamation-circle"></i> {{ warningtext }}</p>
                     {% endif %}
+                
                 
             {% endfor %}
 
