@@ -33,6 +33,10 @@
     },
     "extra": {
         "bolt-assets": "web",
-        "bolt-class": "Bolt\\Extension\\MatthewBeck75\\ContentWarnings\\ContentWarningsExtension"
+        "bolt-class": "Bolt\\Extension\\MatthewBeck75\\ContentWarnings\\ContentWarningsExtension",
+        "bolt-icon": "assets/logo.png",
+        "bolt-screenshots": [
+            "assets/sales-example.png"
+        ]
     }
 }

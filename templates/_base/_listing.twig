@@ -175,7 +175,7 @@ row_header:     prop.extended and (prop.first or (prop.has_groupname and prop.ne
                     {% set combinedcontent = content.values %}
                 {% else %}
                     {% set fields = content.contenttype.fields %} 
-                    {% set combinedcontent = conten.values %}
+                    {% set combinedcontent = content.values %}
             {% endif %}
 
                 {% for key, field in fields if field.warning %}
